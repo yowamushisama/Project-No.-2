@@ -1,0 +1,36 @@
+body{
+    position: relative;
+}
+body::before{
+    content: '';
+    background-image: url(CodingBackground5.jpg);
+    position:fixed;
+   
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: brightness(100%) blur(5px);
+}
+.heading{
+    font-size: 49px;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,10%);
+}
+.heading-text {
+    color: aliceblue;
+    text-align: center;
+    max-width: 300px;
+    z-index: 1;
+
+}
+.name{
+    color: aliceblue;
+    margin: 10px;
+}
