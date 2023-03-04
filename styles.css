@@ -17,10 +17,10 @@ body{
 }
 
 .heading{
-    font-size: 42px;
+    font-size: 45px;
     text-align: center;
     position: absolute;
-    top: 40%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%,0%);
 }
@@ -36,7 +36,7 @@ h1{
 span{
     display: inline-block;
     animation-name: flip;
-    animation-duration: 0.8s;
+    animation-duration: 0.9s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
     opacity: 0;
@@ -58,29 +58,51 @@ span:nth-of-type(5){
     animation-delay:1s;
 }
 .name{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-left: 5px;
     color: aliceblue;
-    margin: 10px;
+    margin: 5px;
+    z-index: 11;
 }
+/*Menu for options*/
 .options{
+    position: fixed;
     color: aliceblue;
     font-size: 26px;
-    position:absolute;
-    top:0;
+    padding: 10px;
+    top:10px;
     right: 10px;
+    bottom: 0;
     margin: auto;
-    z-index: 1;
+    z-index: 12;
 }
 .options:hover{
     cursor:pointer;
     color: rgb(203, 214, 224);
     font-size:27px ;
 }
+
+.cross_option{
+    display: none;
+    position: fixed;
+    cursor:pointer;
+    color: aliceblue;
+    font-size:27px ;
+    padding: 10px;
+    top:10px;
+    right: 10px;
+    margin: auto;
+    z-index: 13;
+}
 .arrow-down{
     color: aliceblue;
     font-size: 25px;
     position: absolute;
-    top: 465px;
-    left: 620px;
+    top:485px;
+    left:610px;
+    
 }
 .arrow-down:hover{
     color: rgb(203, 214, 224);
@@ -93,7 +115,7 @@ span:nth-of-type(5){
     font-size: 15px;
     text-align: center;
     position: relative;
-    top: 375px;
+    top: 455px;
 }
 .headliner_op{
     opacity: 0;
@@ -101,6 +123,63 @@ span:nth-of-type(5){
     animation-duration: 1s;
     animation-fill-mode: forwards;
     animation-delay: 1.3s;
+}
+/* For Home Page */
+/* For background of home page when the button is
+clicked*/
+
+.background_color{
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+   /* background-color: rgb(57, 57, 147);*/
+    background-color: rgb(17, 17, 122);
+    
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation-name: background_color;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.4s;
+}
+.Home_Page{
+    
+    position: fixed;
+    top: 20%;   
+    right: 2%;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.Home_Page li{
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    
+}
+.Home_Page a{
+    color: rgb(219, 226, 234);
+    text-decoration: none;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 800;
+    font-size: 49px;
+    width: 100%;
+    text-align: center;
+} 
+.Home_Page a.home_link {
+    color: #fff;
+}
+.Home_Page a:hover{
+    color: #fff;
 }
 /*Media queries for smaller screens*/
 @media screen and (max-width:768px){
@@ -153,5 +232,16 @@ size*/
     }
     to {
         opacity: 1;
+    }
+  }
+  /*Animation to move background color from the top to the bottom*/
+  @keyframes background_color{
+    from{   
+        opacity: 0.5; 
+        bottom: 100%;
+    }
+    to {
+        opacity: 0.95; 
+        bottom: 0;
     }
   }
